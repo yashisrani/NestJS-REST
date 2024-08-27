@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, UseGuards} from '@nestjs/common';
+import { Controller, Get, Post, Body, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterUserDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
@@ -8,17 +8,19 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
-//  @UseGuards(JwtAuthGuard)
-  @Post()
-  @ApiOperation({description: 'to register a new user with email', summary: 'register a user with email'})
+
+  
+  @Post('register')
+  @ApiOperation({ description:'To register a new user with email.', summary: 'Register a User with details.' })
   create(@Body() registerData: RegisterUserDto) {
     return this.authService.register(registerData);
   }
 
-  @Get()
-  @ApiOperation({description: 'login with email', summary: 'end point to login with user and password'})
+  @Post('login')
+  @ApiOperation({ description:'Login with email.', summary: 'Endpoint to login with user email and password.' })
   login(@Body() loginData: LoginDto){
-    return this.authService.login(loginData);
+    return this.authService.login(loginData)
   }
+
   
 }
