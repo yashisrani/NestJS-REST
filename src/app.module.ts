@@ -8,7 +8,6 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
 import { ClassSerializerInterceptor } from '@nestjs/common';
 
-
 @Module({
   imports: [DatabaseModule, ConfigModule.forRoot(),TodoModule, AuthModule],
   controllers: [AppController],
