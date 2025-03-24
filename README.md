@@ -58,6 +58,9 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+<img width="1440" alt="Screen Shot 2024-08-26 at 7 41 38 PM" src="https://github.com/user-attachments/assets/518344e3-622e-492c-a124-b688dcd41581" />
+
+
 ## Resources
 
 Check out a few resources that may come in handy when working with NestJS:
